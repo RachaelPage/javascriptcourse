@@ -2,16 +2,16 @@
 
 //Create at least 2 different classes 
 
-Cameraview = class {
+cameraview = class {
     constructor(room, distance_from_wall) {
        this.room = room
-       this.distance_from_wall = distance
+       this.distance_from_wall = distance_from_wall
     
     }
 }
 
-Artwork = class {
-    constructor(name, width, height, price) {
+artwork = class {
+    constructor(name, width, height, europrice) {
        this.name = name
        this.width = width
        this.height = height
@@ -31,9 +31,9 @@ Artwork = class {
 
 //create several instances for these classes 
 
-blue_lagoon = new Artwork('Blue Lagoon', 100,100, 1500)
-red_sunset = new Artwork('Red Sunset', 120,120, 2000)
-pink_drinks = new Artwork('Pink Drinks', 150,150, 3000)
+blue_lagoon = new artwork('Blue Lagoon', 100,100, 1500)
+red_sunset = new artwork('Red Sunset', 120,120, 2000)
+pink_drinks = new artwork('Pink Drinks', 150,150, 3000)
 bathroom = new cameraview('Bathroom', 2)
 bedroom = new cameraview('Bedroom', 3)
 kitchen = new cameraview('Kitchen', 2.5)
@@ -44,21 +44,6 @@ artinbathroom = new cameraview('Blue Lagoon in bathroom')
 artinbedroom = new cameraview('Red Sunset in bedroom')
 artinkitchen = new cameraview('Pink Drinks in kitchen')
 
-blue_lagoon.cameraview(artinbathroom)
-red_sunset.cameraview(artinbedroom)
-pink_drinks.cameraview(artinkitchen)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+blue_lagoon.see_in(artinbathroom)
+red_sunset.see_in(artinbedroom)
+pink_drinks.see_in(artinkitchen)
